@@ -1,16 +1,16 @@
 # Changelog
 
-## 0.5.1-preview
+## 0.5.1
 
 - Added immutable per-root group snapshots with root/subagent grouping, independent-chat separation, five-minute per-group DONE retention, and deterministic aggregate priority
 - Added per-group lifecycle notifications with startup baselining and new-turn completion deduplication
 - Added one-shot semantic deadlines for DONE expiry, STUCK confirmation, and attention-state expiry
 - Hardened detached PID identity with process start time, executable, trusted run-root, output evidence, stale-receipt, and PID-reuse checks
 - Preserved incremental JSONL parsing through partial writes, truncation, replacement, rotation, watcher recovery, and bounded initial tails; added parser metrics and stress coverage
-- Completed the selected popup with simultaneous compact group rows, cute public labels/subtitles, brighter canonical WORKING color, and a ring-free heartbeat tray glyph
+- Completed the selected popup with simultaneous compact group rows, friendly public labels/subtitles, brighter canonical WORKING color, and a ring-free heartbeat tray glyph
 - Made build outputs isolated and pointer-selected so a failed build or self-test cannot launch a stale executable
 - Split production compilation from test/stress compilation; plain `BUILD.bat` and `RUN_ME.bat` build or launch only the app, while `--with-tests` writes tests to an isolated `bin\test-build-*` output and remains developer-only
-- Hardened the build receipt checks so the launch/test scripts accept only generated `bin\build-<digits>-<digits>` paths
+- Hardened build receipt checks so launch/test scripts accept only generated `bin\build-<digits>-<digits>` paths
 - Excluded cold dangling rollouts without recent real progress from public state, active lights, representatives, and notifications; retained them internally as stale history
 - Kept trusted detached background work visible only while its identity is current, and advanced `Last work` only on CPU/I/O/output progress evidence
 - Made the compact popup reserve a dedicated `+N more` row and grow its height before the divider and Details link

@@ -1,13 +1,44 @@
 # Contributing
 
+Thanks for helping improve Is Codex Working?
+
 Small, focused changes are preferred.
 
-Before opening a pull request:
+## Before opening a pull request
 
 1. Keep the app local and read-only
-2. Avoid polling loops when an event or bounded check can do the job
-3. Do not classify a task as working from CPU, process existence, or file mtime alone
-4. Keep the main popup simple; put technical evidence in Details
-5. Run `RUN_SELF_TESTS.bat` on Windows
+2. Preserve zero-login, zero-telemetry behavior
+3. Avoid polling loops when an event or bounded check can do the job
+4. Never classify a task as `WORKING` from CPU, process existence, UI text, or file mtime alone
+5. Keep subagents grouped under their root chat
+6. Keep the main popup simple; technical evidence belongs in Details
+7. Run the Windows regression tests before submitting
 
-Bug reports are most useful with copied diagnostics and a description of what Codex was actually doing. Do not attach private rollout contents unless you intentionally want to share them.
+```bat
+RUN_SELF_TESTS.bat
+```
+
+For changes to monitoring, watcher recovery, detached jobs, or performance, also run the stress suite from the test build.
+
+## Bug reports
+
+Useful reports include:
+
+- Windows version
+- Codex app/CLI context
+- what the tray app displayed
+- what Codex was actually doing
+- copied diagnostics, when safe to share
+
+Please do **not** attach private rollout contents, credentials, or personal project data unless you intentionally want to make them public.
+
+## Pull requests
+
+Explain:
+
+- what changed
+- why it changed
+- which false-positive/false-negative or UX case it addresses
+- how you tested it
+
+Avoid unrelated cleanup in the same PR.

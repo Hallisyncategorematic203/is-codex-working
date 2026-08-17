@@ -1,0 +1,66 @@
+name: Bug report
+description: Report incorrect status, crashes, UI problems, or excessive resource use
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please avoid posting private Codex rollout contents or credentials.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: v0.5.1
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: Windows 11 24H2
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: What went wrong?
+      options:
+        - Wrong WORKING status
+        - Wrong STUCK status
+        - Wrong DONE / LIMIT / ERROR status
+        - Background job tracking
+        - Multiple chats
+        - Tray / popup UI
+        - Crash
+        - CPU / memory / disk usage
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: What should the app have shown or done?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      placeholder: What did it show or do instead?
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Redacted diagnostics
+      description: Paste Copy diagnostics output if it is safe to share. Remove anything private first.
+      render: text
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Privacy check
+      options:
+        - label: I checked that this report does not contain secrets, private rollout contents, or personal project data.
+          required: true
